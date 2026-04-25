@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Lesson - Christ the King School</title>
+    <style>
+        body { margin: 0; padding: 0; font-family: Arial, sans-serif; background: #1a1a1a; color: white; }
+        .lesson-container { width: 100%; height: 100vh; display: flex; flex-direction: column; }
+        .lesson-header { background: linear-gradient(135deg, #3b82f6, #1e40af); padding: 1rem; text-align: center; }
+        .lesson-content { flex: 1; padding: 2rem; overflow-y: auto; max-width: 1200px; margin: 0 auto; }
+        .slide { background: white; color: #1f2937; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .slide h2 { color: #3b82f6; margin-bottom: 1rem; font-size: 2rem; }
+        .example { background: #f0f9ff; padding: 1rem; border-radius: 8px; margin: 1rem 0; }
+        .controls { position: fixed; bottom: 20px; right: 20px; background: rgba(0,0,0,0.8); padding: 1rem; border-radius: 8px; display: flex; gap: 1rem; }
+        .btn { background: #3b82f6; color: white; border: none; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; }
+        .progress { position: fixed; top: 0; left: 0; width: 100%; height: 4px; background: rgba(255,255,255,0.2); }
+        .progress-bar { height: 100%; background: #10b981; width: 0%; transition: width 0.3s; }
+    </style>
+</head>
+<body>
+    <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+    <div class="lesson-container">
+        <div class="lesson-header">
+            <h1>📝 English Essay Writing</h1>
+            <p>English Lesson for GCE O/L Students</p>
+            <p>Teacher: Mrs. Emily Anderson | Duration: 35:40</p>
+        </div>
+        <div class="lesson-content">
+            <div class="slide">
+                <h2>Lesson Objectives</h2>
+                <ul><li>Understand essay structure</li><li>Learn different essay types</li><li>Master paragraph writing</li><li>Improve writing skills</li></ul>
+            </div>
+            <div class="slide">
+                <h2>What is an Essay?</h2>
+                <p>An essay is a piece of writing that presents an argument or discusses a topic.</p>
+                <div class="example"><h3>Key Elements:</h3><ul><li>Introduction</li><li>Body paragraphs</li><li>Conclusion</li></ul></div>
+            </div>
+            <div class="slide">
+                <h2>Essay Structure</h2>
+                <div class="example"><h3>Introduction</h3><p>Hook reader, state thesis, outline main points</p></div>
+                <div class="example"><h3>Body</h3><p>3-5 paragraphs, each with topic sentence and supporting details</p></div>
+                <div class="example"><h3>Conclusion</h3><p>Restate thesis, summarize main points, final thought</p></div>
+            </div>
+            <div class="slide">
+                <h2>Types of Essays</h2>
+                <ul><li>Descriptive - paints a picture with words</li><li>Narrative - tells a story</li><li>Expository - explains or informs</li><li>Persuasive - convinces reader</li></ul>
+            </div>
+            <div class="slide">
+                <h2>Writing Tips</h2>
+                <ul><li>Plan before writing</li><li>Use clear topic sentences</li><li>Provide specific examples</li><li>Use transition words</li><li>Proofread carefully</li></ul>
+            </div>
+        </div>
+    </div>
+    <div class="controls">
+        <button class="btn" onclick="previousSlide()">⬅️ Previous</button>
+        <button class="btn" onclick="togglePlayPause()" id="playPauseBtn">▶️ Play</button>
+        <button class="btn" onclick="nextSlide()">Next ➡️</button>
+    </div>
+    <script>
+        let currentSlide = 0, isPlaying = false, playInterval;
+        const slides = document.querySelectorAll('.slide'), totalSlides = slides.length;
+        function showSlide(index) { slides.forEach((slide, i) => { slide.style.display = i === index ? 'block' : 'none'; }); updateProgress(); }
+        function nextSlide() { currentSlide = (currentSlide + 1) % totalSlides; showSlide(currentSlide); }
+        function previousSlide() { currentSlide = (currentSlide - 1 + totalSlides) % totalSlides; showSlide(currentSlide); }
+        function togglePlayPause() { isPlaying = !isPlaying; const btn = document.getElementById('playPauseBtn'); if (isPlaying) { btn.textContent = '⏸️ Pause'; playInterval = setInterval(nextSlide, 5000); } else { btn.textContent = '▶️ Play'; clearInterval(playInterval); } }
+        function updateProgress() { const progress = ((currentSlide + 1) / totalSlides) * 100; document.getElementById('progressBar').style.width = progress + '%'; }
+        showSlide(0);
+        document.addEventListener('keydown', (e) => { if (e.key === 'ArrowRight') nextSlide(); if (e.key === 'ArrowLeft') previousSlide(); if (e.key === ' ') { e.preventDefault(); togglePlayPause(); } });
+    </script>
+</body>
+</html>

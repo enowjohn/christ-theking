@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library & Videos - Christ the King School</title>
+    <link rel="stylesheet" href="styles/globals.css">
+    <link rel="icon" href="public/WhatsApp Image 2026-04-25 at 8.36.46 AM.jpeg">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="public/WhatsApp Image 2026-04-25 at 8.36.46 AM.jpeg" alt="Christ the King School Logo">
+                <span>Christ the King School</span>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="academics.html">Academics</a></li>
+                <li><a href="study.html">Study & Teaching</a></li>
+                <li><a href="library.html">Library & Videos</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Digital Library Section -->
+    <section style="padding: 4rem 0; background-color: #f8fafc;">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem; font-size: 2.5rem; color: #1f2937;">
+                📖 Digital Library
+            </h2>
+            <p style="text-align: center; margin-bottom: 3rem; font-size: 1.1rem; color: #6b7280;">
+                Access our comprehensive collection of e-books, journals, and digital publications
+            </p>
+            
+            <!-- Search Bar -->
+            <div style="max-width: 600px; margin: 0 auto 3rem;">
+                <div style="display: flex; gap: 0.5rem;">
+                    <input 
+                        type="text" 
+                        id="librarySearch"
+                        placeholder="Search for books, authors, or subjects..." 
+                        style="flex: 1; padding: 12px; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem;"
+                        onkeyup="searchLibrary()"
+                    />
+                    <button onclick="searchLibrary()" class="btn btn-primary">🔍 Search</button>
+                </div>
+            </div>
+            
+            <!-- Category Filters -->
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <button onclick="filterBooks('all')" class="btn btn-primary" style="margin: 0.25rem;">All Books</button>
+                <button onclick="filterBooks('academic')" class="btn" style="margin: 0.25rem; background: #10b981;">Academic</button>
+                <button onclick="filterBooks('fiction')" class="btn" style="margin: 0.25rem; background: #f59e0b;">Fiction</button>
+                <button onclick="filterBooks('reference')" class="btn" style="margin: 0.25rem; background: #dc2626;">Reference</button>
+                <button onclick="filterBooks('industrial')" class="btn" style="margin: 0.25rem; background: #8b5cf6;">Industrial</button>
+            </div>
+            
+            <div class="grid grid-3" id="libraryGrid">
+                <!-- Books will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Lessons Section -->
+    <section id="videos" style="padding: 4rem 0; background-color: white;">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem; font-size: 2.5rem; color: #1f2937;">
+                🎥 Video Lessons
+            </h2>
+            <p style="text-align: center; margin-bottom: 3rem; font-size: 1.1rem; color: #6b7280;">
+                Watch educational videos and recorded lessons from our qualified teachers
+            </p>
+            
+            <!-- Video Categories -->
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <button onclick="filterVideos('all')" class="btn btn-primary" style="margin: 0.25rem;">All Videos</button>
+                <button onclick="filterVideos('mathematics')" class="btn" style="margin: 0.25rem; background: #1e40af;">Mathematics</button>
+                <button onclick="filterVideos('sciences')" class="btn" style="margin: 0.25rem; background: #10b981;">Sciences</button>
+                <button onclick="filterVideos('languages')" class="btn" style="margin: 0.25rem; background: #dc2626;">Languages</button>
+                <button onclick="filterVideos('industrial')" class="btn" style="margin: 0.25rem; background: #f59e0b;">Industrial</button>
+            </div>
+            
+            <div class="grid grid-3" id="videoGrid">
+                <!-- Videos will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Resources Section -->
+    <section style="padding: 4rem 0; background-color: #f8fafc;">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem; font-size: 2.5rem; color: #1f2937;">
+                ⭐ Featured Resources
+            </h2>
+            <div class="grid grid-3" id="featuredGrid">
+                <!-- Featured resources will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Reading Progress Section -->
+    <section style="padding: 4rem 0; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem; font-size: 2.5rem;">
+                📊 Your Reading Progress
+            </h2>
+            <div class="grid grid-4">
+                <div style="text-align: center;">
+                    <h3 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 0.5rem;" id="booksRead">0</h3>
+                    <p>Books Read</p>
+                </div>
+                <div style="text-align: center;">
+                    <h3 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 0.5rem;" id="videosWatched">0</h3>
+                    <p>Videos Watched</p>
+                </div>
+                <div style="text-align: center;">
+                    <h3 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 0.5rem;" id="studyHours">0</h3>
+                    <p>Study Hours</p>
+                </div>
+                <div style="text-align: center;">
+                    <h3 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 0.5rem;" id="achievements">0</h3>
+                    <p>Achievements</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 2rem;">
+                <button onclick="showProgressDetails()" class="btn" style="background: white; color: #667eea;">
+                    View Detailed Progress
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>Christ the King School is dedicated to providing quality education with a focus on both industrial and general education.</p>
+                    <p>70% GCE O/L pass rate - Excellence in Education!</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="academics.html">Download Questions</a></li>
+                        <li><a href="study.html">Study Resources</a></li>
+                        <li><a href="library.html">Digital Library</a></li>
+                        <li><a href="library.html#videos">Video Lessons</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li>📧 info@christthekingschool.edu</li>
+                        <li>📞 +237 XXXX XXXX</li>
+                        <li>📍 Makenene, Center Region, Cameroon</li>
+                        <li>🕐 Mon-Fri: 7:30 AM - 4:00 PM</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">YouTube</a></li>
+                        <li><a href="#">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Christ the King School. All rights reserved. | Powered by Excellence</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/library.js"></script>
+</body>
+</html>

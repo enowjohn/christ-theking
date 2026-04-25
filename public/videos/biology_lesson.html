@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biology Lesson - Christ the King School</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: #1a1a1a;
+            color: white;
+        }
+        .lesson-container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .lesson-header {
+            background: linear-gradient(135deg, #10b981, #059669);
+            padding: 1rem;
+            text-align: center;
+        }
+        .lesson-content {
+            flex: 1;
+            padding: 2rem;
+            overflow-y: auto;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .slide {
+            background: white;
+            color: #1f2937;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .slide h2 {
+            color: #10b981;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+        .cell-diagram {
+            background: #f0fdf4;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #10b981;
+            margin: 1rem 0;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+        .organism {
+            background: #f0f9ff;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        .controls {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.8);
+            padding: 1rem;
+            border-radius: 8px;
+            display: flex;
+            gap: 1rem;
+        }
+        .btn {
+            background: #10b981;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: #059669;
+        }
+        .progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(255,255,255,0.2);
+        }
+        .progress-bar {
+            height: 100%;
+            background: #10b981;
+            width: 0%;
+            transition: width 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <div class="progress">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+    
+    <div class="lesson-container">
+        <div class="lesson-header">
+            <h1>🧬 Cell Biology</h1>
+            <p>Biology Lesson for GCE O/L Students</p>
+            <p>Teacher: Dr. Sarah Davis | Duration: 52:20</p>
+        </div>
+        
+        <div class="lesson-content">
+            <div class="slide">
+                <h2>Lesson Objectives</h2>
+                <ul>
+                    <li>Understand cell structure and function</li>
+                    <li>Identify different types of cells</li>
+                    <li>Learn about cell organelles</li>
+                    <li>Understand cell division processes</li>
+                </ul>
+            </div>
+            
+            <div class="slide">
+                <h2>What is a Cell?</h2>
+                <p>A cell is the basic structural and functional unit of all living organisms.</p>
+                
+                <div class="cell-diagram">
+                    🧬 CELL
+                    <br>
+                    Basic Unit of Life
+                </div>
+                
+                <p>Key characteristics:</p>
+                <ul>
+                    <li>Surrounded by a cell membrane</li>
+                    <li>Contains genetic material</li>
+                    <li>Carries out life processes</li>
+                    <li>Can reproduce</li>
+                </ul>
+            </div>
+            
+            <div class="slide">
+                <h2>Types of Cells</h2>
+                
+                <div class="organism">
+                    <h3>Prokaryotic Cells</h3>
+                    <ul>
+                        <li>No nucleus</li>
+                        <li>Simple structure</li>
+                        <li>Bacteria and archaea</li>
+                        <li>Usually smaller</li>
+                    </ul>
+                </div>
+                
+                <div class="organism">
+                    <h3>Eukaryotic Cells</h3>
+                    <ul>
+                        <li>Have nucleus</li>
+                        <li>Complex structure</li>
+                        <li>Plants, animals, fungi, protists</li>
+                        <li>Usually larger</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="slide">
+                <h2>Animal Cell Structure</h2>
+                
+                <div class="cell-diagram">
+                    🦠 ANIMAL CELL
+                    <br>
+                    Nucleus • Mitochondria • Ribosomes
+                    <br>
+                    Endoplasmic Reticulum • Golgi Apparatus
+                </div>
+                
+                <p>Key organelles and their functions:</p>
+                <ul>
+                    <li><strong>Nucleus:</strong> Contains DNA, controls cell activities</li>
+                    <li><strong>Mitochondria:</strong> Powerhouse, produces energy</li>
+                    <li><strong>Ribosomes:</strong> Protein synthesis</li>
+                </ul>
+            </div>
+            
+            <div class="slide">
+                <h2>Plant Cell Structure</h2>
+                
+                <div class="cell-diagram">
+                    🌱 PLANT CELL
+                    <br>
+                    Cell Wall • Chloroplasts • Large Vacuole
+                    <br>
+                    Same organelles as animal cells
+                </div>
+                
+                <p>Additional plant cell features:</p>
+                <ul>
+                    <li><strong>Cell Wall:</strong> Structural support and protection</li>
+                    <li><strong>Chloroplasts:</strong> Photosynthesis, contain chlorophyll</li>
+                    <li><strong>Large Vacuole:</strong> Storage and maintaining turgor pressure</li>
+                </ul>
+            </div>
+            
+            <div class="slide">
+                <h2>Cell Membrane</h2>
+                <p>The cell membrane controls what enters and leaves the cell.</p>
+                
+                <div class="cell-diagram">
+                    🧫 CELL MEMBRANE
+                    <br>
+                    Selectively Permeable
+                    <br>
+                    Phospholipid Bilayer
+                </div>
+                
+                <p>Functions:</p>
+                <ul>
+                    <li>Protects the cell</li>
+                    <li>Controls movement of substances</li>
+                    <li>Maintains cell shape</li>
+                    <li>Facilitates communication</li>
+                </ul>
+            </div>
+            
+            <div class="slide">
+                <h2>Cell Division - Mitosis</h2>
+                <p>Mitosis is the process of cell division for growth and repair.</p>
+                
+                <div class="organism">
+                    <h3>Stages of Mitosis:</h3>
+                    <ol>
+                        <li><strong>Prophase:</strong> Chromosomes condense</li>
+                        <li><strong>Metaphase:</strong> Chromosomes line up</li>
+                        <li><strong>Anaphase:</strong> Chromosomes separate</li>
+                        <li><strong>Telophase:</strong> New nuclei form</li>
+                    </ol>
+                </div>
+                
+                <p>Result: Two identical daughter cells</p>
+            </div>
+            
+            <div class="slide">
+                <h2>Cell Division - Meiosis</h2>
+                <p>Meiosis produces gametes for sexual reproduction.</p>
+                
+                <div class="organism">
+                    <h3>Key Features:</h3>
+                    <ul>
+                        <li>Two divisions</li>
+                        <li>Four daughter cells</li>
+                        <li>Half the chromosome number</li>
+                        <li>Genetic variation</li>
+                    </ul>
+                </div>
+                
+                <p>Important for sexual reproduction and genetic diversity</p>
+            </div>
+            
+            <div class="slide">
+                <h2>Cell Specialization</h2>
+                <p>Cells specialize to perform specific functions in multicellular organisms.</p>
+                
+                <div class="organism">
+                    <h3>Examples:</h3>
+                    <ul>
+                        <li><strong>Red blood cells:</strong> Carry oxygen</li>
+                        <li><strong>Nerve cells:</strong> Transmit signals</li>
+                        <li><strong>Muscle cells:</strong> Enable movement</li>
+                        <li><strong>Skin cells:</strong> Protection</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="slide">
+                <h2>Laboratory Techniques</h2>
+                <p>Common methods for studying cells:</p>
+                <ul>
+                    <li>🔬 Microscopy - Light and electron microscopes</li>
+                    <li>🧪 Cell culture - Growing cells in laboratory</li>
+                    <li>🧬 Staining techniques - Visualizing cell structures</li>
+                    <li>📊 Cell counting - Determining cell numbers</li>
+                </ul>
+                
+                <p><strong>Safety:</strong> Always follow laboratory safety protocols</p>
+            </div>
+            
+            <div class="slide">
+                <h2>Real-World Applications</h2>
+                <p>Cell biology is crucial for:</p>
+                <ul>
+                    <li>🏥 Medical research and treatments</li>
+                    <li>🧬 Genetic engineering</li>
+                    <li>🦠 Disease understanding and prevention</li>
+                    <li>🌱 Agricultural improvements</li>
+                    <li>💊 Drug development</li>
+                    <li>🔬 Forensic science</li>
+                </ul>
+            </div>
+            
+            <div class="slide">
+                <h2>Practice Questions</h2>
+                
+                <div class="organism">
+                    <h3>Try these:</h3>
+                    <p>1. What is the difference between prokaryotic and eukaryotic cells?</p>
+                    <p>2. Name three organelles found in animal cells</p>
+                    <p>3. What is the function of the cell membrane?</p>
+                    <p>4. How many cells are produced in meiosis?</p>
+                </div>
+                
+                <p><strong>Remember:</strong> Cells are the building blocks of all life!</p>
+            </div>
+            
+            <div class="slide">
+                <h2>Summary</h2>
+                <p>Today we learned:</p>
+                <ul>
+                    <li>Basic cell structure and types</li>
+                    <li>Differences between plant and animal cells</li>
+                    <li>Cell division processes</li>
+                    <li>Cell specialization</li>
+                    <li>Laboratory techniques</li>
+                </ul>
+                
+                <p><strong>Key Concept:</strong> All living things are made of cells!</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="controls">
+        <button class="btn" onclick="previousSlide()">⬅️ Previous</button>
+        <button class="btn" onclick="togglePlayPause()" id="playPauseBtn">▶️ Play</button>
+        <button class="btn" onclick="nextSlide()">Next ➡️</button>
+    </div>
+    
+    <script>
+        let currentSlide = 0;
+        let isPlaying = false;
+        let playInterval;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.display = i === index ? 'block' : 'none';
+            });
+            updateProgress();
+        }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+        
+        function previousSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(currentSlide);
+        }
+        
+        function togglePlayPause() {
+            isPlaying = !isPlaying;
+            const btn = document.getElementById('playPauseBtn');
+            
+            if (isPlaying) {
+                btn.textContent = '⏸️ Pause';
+                playInterval = setInterval(nextSlide, 5000);
+            } else {
+                btn.textContent = '▶️ Play';
+                clearInterval(playInterval);
+            }
+        }
+        
+        function updateProgress() {
+            const progress = ((currentSlide + 1) / totalSlides) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+        }
+        
+        showSlide(0);
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') nextSlide();
+            if (e.key === 'ArrowLeft') previousSlide();
+            if (e.key === ' ') {
+                e.preventDefault();
+                togglePlayPause();
+            }
+        });
+    </script>
+</body>
+</html>

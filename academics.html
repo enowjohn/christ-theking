@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academics - Christ the King School</title>
+    <link rel="stylesheet" href="styles/globals.css">
+    <link rel="icon" href="public/WhatsApp Image 2026-04-25 at 8.36.46 AM.jpeg">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="public/WhatsApp Image 2026-04-25 at 8.36.46 AM.jpeg" alt="Christ the King School Logo">
+                <span>Christ the King School</span>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="academics.html">Academics</a></li>
+                <li><a href="study.html">Study & Teaching</a></li>
+                <li><a href="library.html">Library & Videos</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Download Questions Section -->
+    <section style="padding: 4rem 0; background-color: #f8fafc;">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem; font-size: 2.5rem; color: #1f2937;">
+                📝 Download Past Questions
+            </h2>
+            <p style="text-align: center; margin-bottom: 3rem; font-size: 1.1rem; color: #6b7280;">
+                Access past examination questions for all subjects to help you prepare for your exams
+            </p>
+            
+            <div class="grid grid-3" id="subjectsGrid">
+                <!-- Subjects will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Fill Marks Section -->
+    <section id="marks" style="padding: 4rem 0; background-color: white;">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem; font-size: 2.5rem; color: #1f2937;">
+                📊 Student Marks Entry System
+            </h2>
+            <p style="text-align: center; margin-bottom: 3rem; font-size: 1.1rem; color: #6b7280;">
+                Teachers can enter student marks and generate downloadable reports
+            </p>
+            
+            <div style="max-width: 600px; margin: 0 auto;">
+                <form id="marksForm" class="card">
+                    <div class="form-group">
+                        <label for="studentName">Student Name *</label>
+                        <input
+                            type="text"
+                            id="studentName"
+                            name="studentName"
+                            required
+                            placeholder="Enter student's full name"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <select
+                            id="subject"
+                            name="subject"
+                            required
+                        >
+                            <option value="">Select a subject</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="className">Class *</label>
+                        <input
+                            type="text"
+                            id="className"
+                            name="className"
+                            required
+                            placeholder="e.g., Form 5A, Lower 6B"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="term">Term *</label>
+                        <select
+                            id="term"
+                            name="term"
+                            required
+                        >
+                            <option value="">Select term</option>
+                            <option value="First Term">First Term</option>
+                            <option value="Second Term">Second Term</option>
+                            <option value="Third Term">Third Term</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="marks">Marks (%) *</label>
+                        <input
+                            type="number"
+                            id="marks"
+                            name="marks"
+                            required
+                            min="0"
+                            max="100"
+                            placeholder="Enter marks (0-100)"
+                        />
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        Submit Marks
+                    </button>
+                </form>
+
+                <div id="successMessage" style="display: none;" class="success-message">
+                    ✅ Marks submitted successfully!
+                </div>
+
+                <div id="recentEntries" style="display: none; margin-top: 2rem;">
+                    <div class="card">
+                        <h3 style="margin-bottom: 1rem; color: #1f2937;">Recent Entries</h3>
+                        <div id="entriesList" style="max-height: 200px; overflow-y: auto;">
+                            <!-- Entries will be populated here -->
+                        </div>
+                        <button 
+                            id="downloadMarks"
+                            class="btn btn-secondary" 
+                            style="margin-top: 1rem; width: 100%;"
+                        >
+                            📥 Download All Marks as File
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- School Showcase Section -->
+    <section style="padding: 4rem 0; background-color: white;">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem; font-size: 2.5rem; color: #1f2937;">
+                🏫 Our Learning Environment
+            </h2>
+            <div class="grid grid-3">
+                <div class="card" style="padding: 1rem;">
+                    <img src="public/building.jpeg" alt="School Building" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                    <h3 style="text-align: center; color: #1e40af;">Modern Facilities</h3>
+                    <p style="text-align: center; color: #6b7280;">State-of-the-art learning infrastructure</p>
+                </div>
+                <div class="card" style="padding: 1rem;">
+                    <img src="public/WhatsApp Image 2026-04-25 at 8.49.13 AM.jpeg" alt="Student Activities" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                    <h3 style="text-align: center; color: #1e40af;">Active Learning</h3>
+                    <p style="text-align: center; color: #6b7280;">Engaging educational activities</p>
+                </div>
+                <div class="card" style="padding: 1rem;">
+                    <img src="public/WhatsApp Image 2026-04-25 at 8.49.14 AM.jpeg" alt="Classrooms" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                    <h3 style="text-align: center; color: #1e40af;">Well-Equipped Classrooms</h3>
+                    <p style="text-align: center; color: #6b7280;">Modern learning spaces</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section style="padding: 4rem 0; background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: white;">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem; font-size: 2.5rem;">
+                📈 Academic Performance Overview
+            </h2>
+            <div class="grid grid-4">
+                <div style="text-align: center;">
+                    <h3 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 0.5rem;">70%</h3>
+                    <p>Overall Pass Rate</p>
+                    <p style="font-size: 0.9rem; opacity: 0.8;">GCE O/L 2023</p>
+                </div>
+                <div style="text-align: center;">
+                    <h3 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 0.5rem;">15</h3>
+                    <p>Subjects Offered</p>
+                    <p style="font-size: 0.9rem; opacity: 0.8;">Industrial & General</p>
+                </div>
+                <div style="text-align: center;">
+                    <h3 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 0.5rem;">85%</h3>
+                    <p>Average Attendance</p>
+                    <p style="font-size: 0.9rem; opacity: 0.8;">This Term</p>
+                </div>
+                <div style="text-align: center;">
+                    <h3 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 0.5rem;">92%</h3>
+                    <p>Teacher Presence</p>
+                    <p style="font-size: 0.9rem; opacity: 0.8;">Monthly Average</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>Christ the King School is dedicated to providing quality education with a focus on both industrial and general education.</p>
+                    <p>70% GCE O/L pass rate - Excellence in Education!</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="academics.html">Download Questions</a></li>
+                        <li><a href="study.html">Study Resources</a></li>
+                        <li><a href="library.html">Digital Library</a></li>
+                        <li><a href="library.html#videos">Video Lessons</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li>📧 info@christthekingschool.edu</li>
+                        <li>📞 +237 XXXX XXXX</li>
+                        <li>📍 Makenene, Center Region, Cameroon</li>
+                        <li>🕐 Mon-Fri: 7:30 AM - 4:00 PM</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">YouTube</a></li>
+                        <li><a href="#">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Christ the King School. All rights reserved. | Powered by Excellence</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/academics.js"></script>
+</body>
+</html>

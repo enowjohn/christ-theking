@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics Lesson - Christ the King School</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: #1a1a1a;
+            color: white;
+        }
+        .lesson-container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .lesson-header {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            padding: 1rem;
+            text-align: center;
+        }
+        .lesson-content {
+            flex: 1;
+            padding: 2rem;
+            overflow-y: auto;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .slide {
+            background: white;
+            color: #1f2937;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .slide h2 {
+            color: #f59e0b;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+        .formula {
+            background: #fef3c7;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #f59e0b;
+            margin: 1rem 0;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+        }
+        .experiment {
+            background: #f0f9ff;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        .controls {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.8);
+            padding: 1rem;
+            border-radius: 8px;
+            display: flex;
+            gap: 1rem;
+        }
+        .btn {
+            background: #f59e0b;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: #d97706;
+        }
+        .progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(255,255,255,0.2);
+        }
+        .progress-bar {
+            height: 100%;
+            background: #10b981;
+            width: 0%;
+            transition: width 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <div class="progress">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+    
+    <div class="lesson-container">
+        <div class="lesson-header">
+            <h1>⚡ Mechanics and Motion</h1>
+            <p>Physics Lesson for GCE O/L Students</p>
+            <p>Teacher: Prof. Mary Johnson | Duration: 41:15</p>
+        </div>
+        
+        <div class="lesson-content">
+            <div class="slide">
+                <h2>Lesson Objectives</h2>
+                <ul>
+                    <li>Understand basic concepts of motion</li>
+                    <li>Learn about forces and their effects</li>
+                    <li>Study Newton's laws of motion</li>
+                    <li>Apply physics to real-world problems</li>
+                </ul>
+            </div>
+            
+            <div class="slide">
+                <h2>What is Motion?</h2>
+                <p>Motion is the change in position of an object with respect to time.</p>
+                
+                <div class="formula">
+                    Motion = Change in Position / Time
+                </div>
+                
+                <p>Types of motion:</p>
+                <ul>
+                    <li>Linear motion (straight line)</li>
+                    <li>Circular motion (in circles)</li>
+                    <li>Oscillatory motion (back and forth)</li>
+                    <li>Rotational motion (spinning)</li>
+                </ul>
+            </div>
+            
+            <div class="slide">
+                <h2>Speed and Velocity</h2>
+                
+                <div class="experiment">
+                    <h3>Speed</h3>
+                    <div class="formula">Speed = Distance / Time</div>
+                    <p>Scalar quantity (only magnitude)</p>
+                    <p>Example: 60 km/h</p>
+                </div>
+                
+                <div class="experiment">
+                    <h3>Velocity</h3>
+                    <div class="formula">Velocity = Displacement / Time</div>
+                    <p>Vector quantity (magnitude and direction)</p>
+                    <p>Example: 60 km/h North</p>
+                </div>
+            </div>
+            
+            <div class="slide">
+                <h2>Acceleration</h2>
+                <p>Acceleration is the rate of change of velocity.</p>
+                
+                <div class="formula">
+                    a = (v₂ - v₁) / t
+                </div>
+                
+                <div class="experiment">
+                    <h3>Example:</h3>
+                    <p>A car accelerates from 0 to 60 km/h in 10 seconds</p>
+                    <p>a = (60 - 0) / 10 = 6 km/h/s</p>
+                </div>
+            </div>
+            
+            <div class="slide">
+                <h2>Force</h2>
+                <p>Force is a push or pull that can change an object's motion.</p>
+                
+                <div class="formula">
+                    Force = Mass × Acceleration
+                    <br>
+                    F = ma
+                </div>
+                
+                <p>Unit: Newton (N)</p>
+                <p>1 N = 1 kg × 1 m/s²</p>
+            </div>
+            
+            <div class="slide">
+                <h2>Newton's Laws of Motion</h2>
+                
+                <div class="experiment">
+                    <h3>First Law (Inertia)</h3>
+                    <p>An object at rest stays at rest, and an object in motion stays in motion unless acted upon by an external force.</p>
+                </div>
+                
+                <div class="experiment">
+                    <h3>Second Law (F = ma)</h3>
+                    <p>The acceleration of an object is directly proportional to the net force acting on it and inversely proportional to its mass.</p>
+                </div>
+                
+                <div class="experiment">
+                    <h3>Third Law (Action-Reaction)</h3>
+                    <p>For every action, there is an equal and opposite reaction.</p>
+                </div>
+            </div>
+            
+            <div class="slide">
+                <h2>Gravity</h2>
+                <p>Gravity is the force that attracts objects toward the center of the Earth.</p>
+                
+                <div class="formula">
+                    Weight = Mass × g
+                    <br>
+                    W = mg
+                </div>
+                
+                <p>Where g = 9.8 m/s² (acceleration due to gravity)</p>
+                
+                <div class="experiment">
+                    <h3>Example:</h3>
+                    <p>A person with mass 70 kg has weight:</p>
+                    <p>W = 70 × 9.8 = 686 N</p>
+                </div>
+            </div>
+            
+            <div class="slide">
+                <h2>Friction</h2>
+                <p>Friction is a force that opposes motion between two surfaces in contact.</p>
+                
+                <div class="experiment">
+                    <h3>Types of Friction:</h3>
+                    <ul>
+                        <li>Static friction (prevents motion)</li>
+                        <li>Kinetic friction (opposes motion)</li>
+                        <li>Rolling friction (wheels)</li>
+                        <li>Air resistance (moving through air)</li>
+                    </ul>
+                </div>
+                
+                <p>Friction can be both helpful (brakes) and harmful (wastes energy)</p>
+            </div>
+            
+            <div class="slide">
+                <h2>Work and Energy</h2>
+                
+                <div class="experiment">
+                    <h3>Work</h3>
+                    <div class="formula">Work = Force × Distance</div>
+                    <p>W = F × d</p>
+                    <p>Unit: Joule (J)</p>
+                </div>
+                
+                <div class="experiment">
+                    <h3>Kinetic Energy</h3>
+                    <div class="formula">KE = ½mv²</div>
+                    <p>Energy of motion</p>
+                </div>
+                
+                <div class="experiment">
+                    <h3>Potential Energy</h3>
+                    <div class="formula">PE = mgh</div>
+                    <p>Energy due to position</p>
+                </div>
+            </div>
+            
+            <div class="slide">
+                <h2>Simple Machines</h2>
+                <p>Simple machines make work easier by multiplying force or changing direction.</p>
+                
+                <div class="experiment">
+                    <h3>Types:</h3>
+                    <ul>
+                        <li>Lever (seesaw, scissors)</li>
+                        <li>Pulley (elevators, cranes)</li>
+                        <li>Inclined plane (ramps)</li>
+                        <li>Wheel and axle (cars)</li>
+                        <li>Screw (drills)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="slide">
+                <h2>Real-World Applications</h2>
+                <p>Physics is everywhere in daily life:</p>
+                <ul>
+                    <li>🚗 Transportation and vehicles</li>
+                    <li>🏗️ Construction and engineering</li>
+                    <li>⚡ Electricity and power generation</li>
+                    <li>🏥 Medical equipment</li>
+                    <li>🛰️ Satellite technology</li>
+                    <li>🎮 Sports and recreation</li>
+                </ul>
+            </div>
+            
+            <div class="slide">
+                <h2>Practice Problems</h2>
+                
+                <div class="experiment">
+                    <h3>Try these:</h3>
+                    <p>1. A car travels 120 km in 2 hours. What is its average speed?</p>
+                    <p>2. What force is needed to accelerate a 1000 kg car at 3 m/s²?</p>
+                    <p>3. Calculate the weight of a 60 kg person.</p>
+                    <p>4. How much work is done to lift a 10 kg box 2 meters?</p>
+                </div>
+                
+                <p><strong>Remember:</strong> Physics explains how the world works!</p>
+            </div>
+            
+            <div class="slide">
+                <h2>Summary</h2>
+                <p>Today we learned:</p>
+                <ul>
+                    <li>Basic concepts of motion</li>
+                    <li>Forces and Newton's laws</li>
+                    <li>Work and energy</li>
+                    <li>Simple machines</li>
+                    <li>Real-world applications</li>
+                </ul>
+                
+                <p><strong>Key Point:</strong> Physics helps us understand and predict how objects behave!</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="controls">
+        <button class="btn" onclick="previousSlide()">⬅️ Previous</button>
+        <button class="btn" onclick="togglePlayPause()" id="playPauseBtn">▶️ Play</button>
+        <button class="btn" onclick="nextSlide()">Next ➡️</button>
+    </div>
+    
+    <script>
+        let currentSlide = 0;
+        let isPlaying = false;
+        let playInterval;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.display = i === index ? 'block' : 'none';
+            });
+            updateProgress();
+        }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+        
+        function previousSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(currentSlide);
+        }
+        
+        function togglePlayPause() {
+            isPlaying = !isPlaying;
+            const btn = document.getElementById('playPauseBtn');
+            
+            if (isPlaying) {
+                btn.textContent = '⏸️ Pause';
+                playInterval = setInterval(nextSlide, 5000);
+            } else {
+                btn.textContent = '▶️ Play';
+                clearInterval(playInterval);
+            }
+        }
+        
+        function updateProgress() {
+            const progress = ((currentSlide + 1) / totalSlides) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+        }
+        
+        showSlide(0);
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') nextSlide();
+            if (e.key === 'ArrowLeft') previousSlide();
+            if (e.key === ' ') {
+                e.preventDefault();
+                togglePlayPause();
+            }
+        });
+    </script>
+</body>
+</html>

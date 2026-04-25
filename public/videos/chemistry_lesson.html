@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemistry Lesson - Christ the King School</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: #1a1a1a;
+            color: white;
+        }
+        .lesson-container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .lesson-header {
+            background: linear-gradient(135deg, #dc2626, #ef4444);
+            padding: 1rem;
+            text-align: center;
+        }
+        .lesson-content {
+            flex: 1;
+            padding: 2rem;
+            overflow-y: auto;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .slide {
+            background: white;
+            color: #1f2937;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .slide h2 {
+            color: #dc2626;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+        .chemical-formula {
+            background: #fef2f2;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #dc2626;
+            margin: 1rem 0;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+        }
+        .experiment {
+            background: #f0f9ff;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        .controls {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.8);
+            padding: 1rem;
+            border-radius: 8px;
+            display: flex;
+            gap: 1rem;
+        }
+        .btn {
+            background: #dc2626;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: #b91c1c;
+        }
+        .progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(255,255,255,0.2);
+        }
+        .progress-bar {
+            height: 100%;
+            background: #10b981;
+            width: 0%;
+            transition: width 0.3s;
+        }
+        .molecule {
+            font-size: 2rem;
+            text-align: center;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="progress">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+    
+    <div class="lesson-container">
+        <div class="lesson-header">
+            <h1>🧪 Chemical Reactions</h1>
+            <p>Chemistry Lesson for GCE O/L Students</p>
+            <p>Teacher: Dr. Robert Brown | Duration: 38:45</p>
+        </div>
+        
+        <div class="lesson-content">
+            <div class="slide">
+                <h2>Lesson Objectives</h2>
+                <ul>
+                    <li>Understand what chemical reactions are</li>
+                    <li>Identify types of chemical reactions</li>
+                    <li>Balance chemical equations</li>
+                    <li>Recognize reaction indicators</li>
+                </ul>
+            </div>
+            
+            <div class="slide">
+                <h2>What is a Chemical Reaction?</h2>
+                <p>A chemical reaction is a process that leads to the transformation of one set of chemical substances to another.</p>
+                
+                <div class="chemical-formula">
+                    Reactants → Products
+                </div>
+                
+                <p>During a chemical reaction:</p>
+                <ul>
+                    <li>Bonds between atoms are broken</li>
+                    <li>New bonds are formed</li>
+                    <li>New substances are created</li>
+                </ul>
+            </div>
+            
+            <div class="slide">
+                <h2>Signs of Chemical Reactions</h2>
+                <p>How can you tell if a chemical reaction is occurring?</p>
+                
+                <div class="experiment">
+                    <h3>Visual Indicators:</h3>
+                    <ul>
+                        <li>🔥 Color change</li>
+                        <li>💨 Gas formation (bubbles)</li>
+                        <li>🌡️ Temperature change</li>
+                        <li>💡 Light emission</li>
+                        <li>🔊 Sound production</li>
+                        <li>🧪 Precipitate formation</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="slide">
+                <h2>Types of Chemical Reactions</h2>
+                
+                <div class="experiment">
+                    <h3>1. Synthesis (Combination)</h3>
+                    <div class="chemical-formula">A + B → AB</div>
+                    <p>Example: 2H₂ + O₂ → 2H₂O</p>
+                </div>
+                
+                <div class="experiment">
+                    <h3>2. Decomposition</h3>
+                    <div class="chemical-formula">AB → A + B</div>
+                    <p>Example: 2H₂O → 2H₂ + O₂</p>
+                </div>
+            </div>
+            
+            <div class="slide">
+                <h2>More Reaction Types</h2>
+                
+                <div class="experiment">
+                    <h3>3. Single Replacement</h3>
+                    <div class="chemical-formula">A + BC → AC + B</div>
+                    <p>Example: Zn + CuSO₄ → ZnSO₄ + Cu</p>
+                </div>
+                
+                <div class="experiment">
+                    <h3>4. Double Replacement</h3>
+                    <div class="chemical-formula">AB + CD → AD + CB</div>
+                    <p>Example: AgNO₃ + NaCl → AgCl + NaNO₃</p>
+                </div>
+            </div>
+            
+            <div class="slide">
+                <h2>Balancing Chemical Equations</h2>
+                <p>Chemical equations must be balanced to follow the Law of Conservation of Mass.</p>
+                
+                <div class="experiment">
+                    <h3>Example: Balancing H₂ + O₂ → H₂O</h3>
+                    <p>Step 1: Count atoms on both sides</p>
+                    <p>Left: H=2, O=2 | Right: H=2, O=1</p>
+                    <p>Step 2: Balance oxygen first</p>
+                    <div class="chemical-formula">H₂ + O₂ → 2H₂O</div>
+                    <p>Step 3: Balance hydrogen</p>
+                    <div class="chemical-formula">2H₂ + O₂ → 2H₂O</div>
+                </div>
+            </div>
+            
+            <div class="slide">
+                <h2>Common Chemical Reactions</h2>
+                
+                <div class="experiment">
+                    <h3>Combustion Reaction</h3>
+                    <div class="chemical-formula">CH₄ + 2O₂ → CO₂ + 2H₂O</div>
+                    <p>Methane burning to produce carbon dioxide and water</p>
+                </div>
+                
+                <div class="experiment">
+                    <h3>Acid-Base Reaction</h3>
+                    <div class="chemical-formula">HCl + NaOH → NaCl + H₂O</div>
+                    <p>Hydrochloric acid neutralizing sodium hydroxide</p>
+                </div>
+            </div>
+            
+            <div class="slide">
+                <h2>Laboratory Safety</h2>
+                <p>When conducting chemical reactions:</p>
+                <ul>
+                    <li>🥽 Always wear safety goggles</li>
+                    <li>🧤 Use gloves when handling chemicals</li>
+                    <li>👕 Wear lab coats</li>
+                    <li>🌡️ Work in a well-ventilated area</li>
+                    <li>🧪 Know the location of safety equipment</li>
+                    <li>📖 Read all instructions carefully</li>
+                </ul>
+            </div>
+            
+            <div class="slide">
+                <h2>Real-World Applications</h2>
+                <p>Chemical reactions are everywhere:</p>
+                <ul>
+                    <li>🍳 Cooking and food preparation</li>
+                    <li>🚗 Fuel combustion in engines</li>
+                    <li>💊 Pharmaceutical production</li>
+                    <li>🧴 Manufacturing processes</li>
+                    <li>🌱 Photosynthesis in plants</li>
+                    <li>⚡ Battery operations</li>
+                </ul>
+            </div>
+            
+            <div class="slide">
+                <h2>Practice Problems</h2>
+                <p>Balance these equations:</p>
+                
+                <div class="experiment">
+                    <p>1. Fe + O₂ → Fe₂O₃</p>
+                    <p>2. Al + HCl → AlCl₃ + H₂</p>
+                    <p>3. CaCO₃ → CaO + CO₂</p>
+                </div>
+                
+                <p><strong>Solutions:</strong></p>
+                <p>1. 4Fe + 3O₂ → 2Fe₂O₃</p>
+                <p>2. 2Al + 6HCl → 2AlCl₃ + 3H₂</p>
+                <p>3. CaCO₃ → CaO + CO₂</p>
+            </div>
+            
+            <div class="slide">
+                <h2>Summary</h2>
+                <p>Today we learned:</p>
+                <ul>
+                    <li>What chemical reactions are</li>
+                    <li>How to identify reaction types</li>
+                    <li>How to balance equations</li>
+                    <li>Safety procedures</li>
+                    <li>Real-world applications</li>
+                </ul>
+                
+                <p><strong>Key Point:</strong> Mass is neither created nor destroyed in chemical reactions!</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="controls">
+        <button class="btn" onclick="previousSlide()">⬅️ Previous</button>
+        <button class="btn" onclick="togglePlayPause()" id="playPauseBtn">▶️ Play</button>
+        <button class="btn" onclick="nextSlide()">Next ➡️</button>
+    </div>
+    
+    <script>
+        let currentSlide = 0;
+        let isPlaying = false;
+        let playInterval;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.display = i === index ? 'block' : 'none';
+            });
+            updateProgress();
+        }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+        
+        function previousSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(currentSlide);
+        }
+        
+        function togglePlayPause() {
+            isPlaying = !isPlaying;
+            const btn = document.getElementById('playPauseBtn');
+            
+            if (isPlaying) {
+                btn.textContent = '⏸️ Pause';
+                playInterval = setInterval(nextSlide, 5000);
+            } else {
+                btn.textContent = '▶️ Play';
+                clearInterval(playInterval);
+            }
+        }
+        
+        function updateProgress() {
+            const progress = ((currentSlide + 1) / totalSlides) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+        }
+        
+        showSlide(0);
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') nextSlide();
+            if (e.key === 'ArrowLeft') previousSlide();
+            if (e.key === ' ') {
+                e.preventDefault();
+                togglePlayPause();
+            }
+        });
+    </script>
+</body>
+</html>
