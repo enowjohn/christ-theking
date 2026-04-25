@@ -1,0 +1,17 @@
+{
+  "name": "christ-the-king-school",
+  "version": "1.0.0",
+  "description": "Christ the King School Website",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 3000",
+    "dev": "python -m http.server 3000",
+    "build": "echo 'Build complete - static files ready'",
+    "preview": "python -m http.server 3001"
+  },
+  "keywords": ["education", "school", "cameroon"],
+  "author": "Christ the King School",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {}
+}
